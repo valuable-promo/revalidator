@@ -9,7 +9,7 @@ export class AppService {
     return 'Hello World!';
   }
 
-  async getSrvEndpoints() {
+  async getSrvEndpoints(): Promise<string[]> {
     const kc = new k8s.KubeConfig();
     kc.loadFromDefault();
     const k8sApi = kc.makeApiClient(k8s.CoreV1Api);
@@ -25,7 +25,7 @@ export class AppService {
       return ips;
     } catch (err) {
       console.log(err);
-      return false;
+      return ['host.docker.internal'];
     }
   }
 

@@ -14,9 +14,7 @@ export class AppController {
   @Post('/revalidate')
   async revalidate(@Body() body: WebHookDto): Promise<string> {
     const ips = await this.appService.getSrvEndpoints();
-    if (ips !== false) {
-      this.appService.callNextRevalidate(ips, body);
-    }
+    this.appService.callNextRevalidate(ips, body);
     return 'OK';
   }
 }
