@@ -40,8 +40,8 @@ export class AppService {
       axios.post(`http://${ip}:${port}/api/revalidate`, body, { headers }),
     );
     Promise.all(promises)
-      .then((res) => {
-        console.log(res);
+      .then(() => {
+        console.log("All revalidate's requests were sent");
       })
       .catch((err) => {
         console.log(err);
