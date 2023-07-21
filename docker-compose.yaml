@@ -1,0 +1,12 @@
+version: '3'
+services:
+  revalidator:
+    build: .
+    image: ghcr.io/valuable-promo/revalidator:dev
+    command: npm run start:dev
+    ports:
+      - '3001:3000'
+    env_file:
+      - .env.development
+    volumes:
+      - ./:/app
