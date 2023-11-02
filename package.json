@@ -21,7 +21,7 @@
     "release": "npx standard-version && git push --follow-tags origin main"
   },
   "dependencies": {
-    "@kubernetes/client-node": "0.18.1",
+    "@kubernetes/client-node": "0.20.0",
     "@nestjs/common": "10.2.7",
     "@nestjs/core": "10.2.7",
     "@nestjs/platform-fastify": "10.2.7",
